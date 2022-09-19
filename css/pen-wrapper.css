@@ -1,0 +1,44 @@
+*,
+*:after,
+*::before {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	background-color: #000;
+}
+
+.pen-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  height: 220px;
+  width: 220px;
+}
+
+.pen-wrapper::after,
+.pen-wrapper::before {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	content: "";
+}
+
+.pen-wrapper::after {
+	border: 2px dashed #ff000055;
+	border-radius: 2%;
+}
+
+.pen-wrapper::before {
+	opacity: var(--opacity);
+	background: var(--img) no-repeat center;
+	background-size: auto 100%;
+	filter: invert(100%);
+}
